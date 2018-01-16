@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+
+	<servlet>
+		<display-name>oauthServlet</display-name>
+		<servlet-name>oauthServlet</servlet-name>
+		<servlet-class>com.pratice.OauthServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>oauthServlet</servlet-name>
+		<url-pattern>/oauthServlet</url-pattern>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<display-name>retrieveResourceServlet</display-name>
+		<servlet-name>retrieveResourceServlet</servlet-name>
+		<servlet-class>com.pratice.RetrieveResourceServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>retrieveResourceServlet</servlet-name>
+		<url-pattern>/retrieveUserInfo</url-pattern>
+	</servlet-mapping>
+
+</web-app>
