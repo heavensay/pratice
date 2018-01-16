@@ -17,6 +17,8 @@ repositories {
     jcenter()
 }
 
+webAppDirName = 'WebContent'// 设置 WebApp 根目录
+
 dependencies {
 
   	providedCompile "javax.servlet:javax.servlet-api:3.1.0"
