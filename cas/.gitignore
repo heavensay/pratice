@@ -1,0 +1,18 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+#eclipse
+.settings/
+.project
+
+#gradle
+.gradle/
+gradle/
+build/
+bin/
+gradlew
+gradlew.bat
