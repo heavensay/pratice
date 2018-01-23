@@ -4,14 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.pratice</groupId>
-	<artifactId>my-springboot-demo</artifactId>
+	<artifactId>server-provider-2</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
 
-	<name>my-springboot-demo</name>
+	<name>server-provider-2</name>
 	<description>Demo project for Spring Boot</description>
-	
-	<!-- 提供了核心的配置功能 -->
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -23,26 +22,42 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<spring-cloud.version>Edgware.SR1</spring-cloud.version>
 	</properties>
 
 	<dependencies>
-		<!-- 支持内嵌Tomcat和spring-webmvc各种依赖配置 -->
+		<!-- 系统监测，用于consul健康监测 -->
+	    <dependency>  
+	        <groupId>org.springframework.boot</groupId>  
+	        <artifactId>spring-boot-actuator</artifactId>  
+	    </dependency>
+	    <!-- consul服务注册 -->  	
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-consul-discovery</artifactId>
 		</dependency>
 
-		<!-- 支持测试 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>
-			<!--此插件作用： “mvn package”进行打包时，会打包成一个可以直接运行的fat JAR 文件，使用“java -jar”命令就可以直接运行 -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
