@@ -17,3 +17,6 @@ http://127.0.0.1:8500/ui/#/dc1/services查看服务列表
 服务消费端访问以下地址获取对应服务：  
 http://127.0.0.1:8082/services  
 http://127.0.0.1:8082/discovery
+
+## 项目步骤和代码参考
+http://blog.csdn.net/moyu_2012/article/details/72781001 (spring cloud搭建微服务second-fiberhome（二）：结合consul实现服务注册与服务发现) 
