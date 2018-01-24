@@ -15,12 +15,6 @@
 		<spring.version>4.3.8.RELEASE</spring.version>
 	</properties>
 
-	<!-- 子模块定义 -->
-	<modules>
-		<module>zoo-dao</module>
-		<module>zoo-server</module>
-		<module>zoo-web</module>
-	</modules>
 
 	<!-- 声明依赖，供子项目使用，统一依赖版本 -->
 	<dependencyManagement>
@@ -96,7 +90,6 @@
 				<version>${spring.version}</version>
 			</dependency>
 			
-			
 		</dependencies>
 	</dependencyManagement>
 
@@ -128,6 +121,5 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-
 
 </project>

@@ -55,6 +55,6 @@ zoo(右键)->Run As->Maven build(goals：tomcat7:run)即可
 
 
 ## 参考
-http://www.blogjava.net/fancydeepin/archive/2015/06/27/maven-modules.html (maven 多模块项目)
+<a href="http://www.blogjava.net/fancydeepin/archive/2015/06/27/maven-modules.html">maven 多模块项目</a>
 
 
