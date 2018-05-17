@@ -158,6 +158,12 @@
             <artifactId>hibernate-validator</artifactId>
             <version>5.2.0.Final</version>
         </dependency>
+        <!-- Bean Validation在Jersey中是以扩展模块的形式来提供的 -->
+        <dependency>
+            <groupId>org.glassfish.jersey.ext</groupId>
+            <artifactId>jersey-bean-validation</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
 
     </dependencies>
 

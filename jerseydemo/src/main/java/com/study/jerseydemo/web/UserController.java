@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.inject.Singleton;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.Map;
@@ -45,12 +47,14 @@ public class UserController {
         return "mapParam"+name;
     }
 
-    @GET
-    @Path("/gettt")
-    public String gettt() {
-//        if(map != null){
-//            map.forEach( (k,v) ->{ System.out.println("k:"+k+",v:"+v); } );
-//        }
-        return "mapParam";
-    }
+//    /**
+//     * jsr303 validation
+//     * @return
+//     */
+//    @GET
+//    @Path("/verfy")
+//    public String getValitionInfo(@NotNull @QueryParam("userName") String userName) {
+//
+//        return "mapParam";
+//    }
 }
