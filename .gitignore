@@ -20,3 +20,8 @@
 build/
 target/
 bin/
+
+
+#other
+#jrebel
+rebel.xml
