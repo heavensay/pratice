@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	
+	<script type="text/javascript"  src="./js/vue-2.5.16/vue.js"></script>
+	<script type="text/javascript"  src="./js/vue-2.5.16/vue-router.js"></script>
+<!-- 	<script type="text/javascript"  src="./js/requirejs/require.js"></script> -->
+	
+	
+	<script type="text/javascript"  src="./js/elementui/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="./js/elementui/index.css"/>
+	
+	<!-- 引入样式 -->
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<!-- 引入组件库 -->
+<!-- 	<script src="https://unpkg.com/element-ui/lib/index.js"></script>	
+	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script> -->
+</head>
+<body>
+	<div id='app'>
+		<el-container >
+		  
+		  <el-header>流程管理系统</el-header>
+		  
+		  <el-container class='app-area-main'>
+		    <el-aside>
+		    		<!-- 
+				    <el-menu default-active="1-3" 
+				      >
+				      <el-submenu index="1">
+				        <template slot="title">
+				          <i></i>
+				          <span>人员管理22</span>
+				        </template>
+				          <el-menu-item index="1-3">请假申请222</el-menu-item>
+				          <el-menu-item index="1-3-1">请假列表333</el-menu-item>
+				      </el-submenu>
+				    </el-menu>
+				     -->
+				    <el-menu :router="true">
+				    
+				       <template  v-for="(pitem,pindex) in $router.options.routes" v-if="!pitem.hidden">
+				    
+					       <el-submenu index=pindex>
+					       	  <!--  
+					       	  <template slot="title">
+						      	<span>xxx管理</span>
+						      </template>
+						       -->
+					      
+						      <span slot="title">{{pitem.name}}</span>
+						          <template v-for="(item,index) in $router.options.routes[pindex].children" v-if="!item.hidden">
+						            <el-menu-item :index="item.path" >{{item.name}}</el-menu-item>
+						          </template>
+					      </el-submenu>
+			          	</template>				      
+				    </el-menu>				    
+		    
+		    </el-aside>
+		    <el-main>
+		    	<router-view></router-view>
+		    </el-main>
+		  </el-container>
+		  
+	      <el-footer>Footer</el-footer>
+		  
+		</el-container>
+	</div>
+	
+	
+</body>
+
+<style>
+.html,body{
+	margin: 0px;
+	height: 100%;
+	width: 100%;
+}
+
+.el-header {
+	background-color: #B3C0D1;
+	color: #333;
+	text-align: center;
+	line-height: 100px;
+	height: 100px !important;
+}
+
+.el-footer {
+	background-color: #B3C0D1;
+	color: #333;
+	text-align: center;
+	height:100px !important;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+.app-area-main {
+	position: absolute;
+	margin:0px;
+	top: 100px;
+	bottom: 100px;
+}
+
+.el-aside {
+	background-color: green;
+	color: #333;
+	text-align: center;
+	height：100%;
+	width: 40%;
+}
+
+.el-main {
+	background-color: red;
+	color: #333;
+	text-align: center;
+	height：100%;
+	width: 600px;
+}
+</style>
+
+<script type="text/javascript">
+
+
+/* 	require.config({
+		 paths:{
+		  "not-found":"./page/404.vue"
+		 }
+	})
+
+
+	require(['text!not-found'],function(not-found-page){
+		Vue.
+	})	 */
+	
+	/* require(['./page/404.vue']) */	
+	
+	
+	var mainArea = Vue.component('mainArea',{
+		template:'<div>main area<router-view></router-view> </div>'
+	})
+	
+	var LeaveApplyConponent1 = Vue.component('LeaveApplyConponent1',{
+		template:'<div> leave apply html welcome111 </div>'
+	})
+
+	var LeaveApplyConponent2 = Vue.component('LeaveApplyConponent2',{
+		template:'<div> leave apply html welcome222 </div>'
+	})
+
+	var LeaveApplyConponent3 = Vue.component('LeaveApplyConponent3',{
+		template:'<div> leave apply html welcome333 </div>'
+	})
+
+	var LeaveApplyConponent4 = Vue.component('LeaveApplyConponent4',{
+		template:'<div> leave apply html welcome444 </div>'
+	})
+	
+
+
+ 	var NotFoundConponent = Vue.component('NotFoundConponent',{
+		template:'<div><span>pppp</span></div>'
+	})
+ 
+
+	
+	
+	
+	var routers = new VueRouter({
+		routes:[
+		 {path:'/employee-mgr',component:mainArea,name:'员工管理',children:[
+  			{path:'/leaveApply',component:LeaveApplyConponent1,name:'请假申请'},
+			{path:'/leaveList',component:LeaveApplyConponent2,name:'请假列表'}                                                                           
+		 	]
+		 },
+		 {path:'/process-mgr',component:mainArea,name:'流程管理',children:[
+		    {path:'/define',component:NotFoundConponent,name:'流程定义'},
+ 			{path:'/status',component:LeaveApplyConponent4,name:'流程进度查看'}                                                                          
+ 		 	]
+ 		 }
+		]
+	})
+	
+	new Vue({
+		el:"#app", //挂载点是id="index"的地方
+		router:routers
+	})
+
+
+
+	
+</script>
+
+
+</html>
+
