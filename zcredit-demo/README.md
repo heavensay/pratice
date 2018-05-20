@@ -25,6 +25,10 @@ id | loginname | password | name
 3 | bruce | | Bruce
 4 | dolly | | Dolly
 
+##使用框架
+springmvc，eas-ui
+
+
 
 ## 项目编译启动
 
