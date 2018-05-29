@@ -112,7 +112,6 @@
 				<port>8080</port>
 				<path>/zcredit-demo</path>
 				<charset>UTF-8</charset>
-				<encoding>UTF-8</encoding>
 				<server>tomcat7</server>
 			</configuration>
 		</plugin>

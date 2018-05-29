@@ -50,28 +50,28 @@
 		</plugins>
 	</build>
 
-	<profiles>
-		<profile>
-			<id>dev</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<properties>
-				<profileActive>dev</profileActive>
-			</properties>
-			<!--<build>-->
-				<!--<filters>-->
-					<!--<filter>src/main/resources/config/db.xml</filter>-->
-					<!--<filter>src/main/resources/config/test.properties</filter>-->
-				<!--</filters>-->
-			<!--</build>-->
-		</profile>
-		<profile>
-			<id>product</id>
-			<properties>
-				<profileActive>product</profileActive>
-			</properties>
-		</profile>
-	</profiles>
+	<!--<profiles>-->
+		<!--<profile>-->
+			<!--<id>dev</id>-->
+			<!--<activation>-->
+				<!--<activeByDefault>true</activeByDefault>-->
+			<!--</activation>-->
+			<!--<properties>-->
+				<!--<profileActive>dev</profileActive>-->
+			<!--</properties>-->
+			<!--&lt;!&ndash;<build>&ndash;&gt;-->
+				<!--&lt;!&ndash;<filters>&ndash;&gt;-->
+					<!--&lt;!&ndash;<filter>src/main/resources/config/db.xml</filter>&ndash;&gt;-->
+					<!--&lt;!&ndash;<filter>src/main/resources/config/test.properties</filter>&ndash;&gt;-->
+				<!--&lt;!&ndash;</filters>&ndash;&gt;-->
+			<!--&lt;!&ndash;</build>&ndash;&gt;-->
+		<!--</profile>-->
+		<!--<profile>-->
+			<!--<id>product</id>-->
+			<!--<properties>-->
+				<!--<profileActive>product</profileActive>-->
+			<!--</properties>-->
+		<!--</profile>-->
+	<!--</profiles>-->
 
 </project>

@@ -5,6 +5,7 @@ server:
   contextPath: /springboot-demo
 #access-log\u65E5\u5FD7\u8BB0\u5F55
   tomcat:
+    basedir: 'D:/work'
     accesslog:
       enabled: true
       directory: 'D:/work'
