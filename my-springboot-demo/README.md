@@ -13,4 +13,5 @@
 	
 最后访问：http://127.0.0.1:8081/springboot-demo/hello/say
 
-增加了spring.profiles.active属性，用以应对不同环境(生产、测试)使用不同配置文件;注意优先级
+1增加了spring.profiles.active属性，用以应对不同环境(生产、测试)使用不同配置文件;注意优先级
+2增加@EventListener特性，集成spring事件注册、发送功能
